@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Post hecho por Lynda</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .post-card {
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .post-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .post-header h5 {
+            margin: 0;
+        }
+
+        .post-footer {
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .create-post-btn {
+            margin-right: 10px;
+        }
+
+        .navbar {
+            justify-content: space-between;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown-menu-right {
+            right: 0;
+            left: auto;
+        }
+
+        .grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .view-toggle-buttons {
+            margin-right: 15px;
+        }
+
+        .view-toggle-buttons button {
+            border: none;
+            background-color: transparent;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .view-toggle-buttons button.active {
+            color: #007bff;
+        }
+
+        .view-toggle-buttons button:not(.active) {
+            color: #6c757d;
+        }
+
+        .centered-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
+
+        .image-description {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        figure {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" width="30" height="30" alt="">
+            Instagram de Tim Burton
+        </a>
+        
+        <div class="navbar-right">
+            <button class="btn btn-success create-post-btn" data-toggle="modal" data-target="#createPostModal">Crear un nuevo post</button>
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="#">Log out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3 centered-buttons">
+        <div class="view-toggle-buttons text-center">
+            <button id="grid-one" class="active" aria-label="One Image Per Row">
+                <i class="fas fa-th-large"></i>
+            </button>
+            <button id="grid-three" aria-label="Three Images Per Row">
+                <i class="fas fa-th"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div id="imageGrid" class="row">
+            
+            <div class="col-sm-12 col-md-4 mb-3 grid">
+                <figure>
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/bitelchus-poster-66dabe2473323.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Image 1">
+                    <figcaption class="image-description">Beetlejuice Movie Poster</figcaption>
+                </figure>
+            </div>
+            <div class="col-sm-12 col-md-4 mb-3 grid">
+                <figure>
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/sleepy-hollow-66dabe2631c6a.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Image 2">
+                    <figcaption class="image-description">Sleepy Hollow Poster</figcaption>
+                </figure>
+            </div>
+            <div class="col-sm-12 col-md-4 mb-3 grid">
+                <figure>
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/alicia-maravillas-66dabe247bb50.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Image 3">
+                    <figcaption class="image-description">Alice in Wonderland</figcaption>
+                </figure>
+            </div>
+            <div class="col-sm-12 col-md-4 mb-3 grid">
+                <figure>
+                    <img src="https://i.pinimg.com/236x/f6/69/2a/f6692a1651f15257358df964ef9a0287.jpg" alt="Image 4">
+                    <figcaption class="image-description">Edward Scissorhands
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-sm-12 col-md-4 mb-3 grid">
+                <figure>
+                    <img src="https://pics.filmaffinity.com/corpse_bride-106734407-mmed.jpg" alt="Image 5">
+                    <figcaption class="image-description">Corpse Bride</figcaption>
+                </figure>
+            </div>
+            <div class="col-sm-12 col-md-4 mb-3 grid">
+                <figure>
+                    <img src="https://www.telva.com/albumes/2012/10/04/agenda_planes_octubre/1349878655_extras_albumes_0.jpg" alt="Image 6">
+                    <figcaption class="image-description">Frankenweenie Poster</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        const gridOneButton = document.getElementById('grid-one');
+        const gridThreeButton = document.getElementById('grid-three');
+        const gridItems = document.querySelectorAll('#imageGrid .grid');
+
+        gridOneButton.addEventListener('click', function() {
+            gridItems.forEach(item => {
+                item.classList.remove('col-md-4');
+                item.classList.add('col-sm-12');
+            });
+
+            gridOneButton.classList.add('active');
+            gridThreeButton.classList.remove('active');
+        });
+
+        gridThreeButton.addEventListener('click', function() {
+            gridItems.forEach(item => {
+                item.classList.remove('col-sm-12');
+                item.classList.add('col-md-4');
+            });
+
+            // Update active button state
+            gridThreeButton.classList.add('active');
+            gridOneButton.classList.remove('active');
+        });
+    </script>
+
+</body>
+</html>
